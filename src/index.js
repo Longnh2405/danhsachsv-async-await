@@ -27,7 +27,7 @@ function renderStudent(students, class_list) {
           <td>${student.name}</td>
           <td>${class_l.name}</td>
           <td>
-            <button id="updBtn" onclick="updBtn(${student.id},"${student.name}","${student.classId}")">Sửa</button> <br />
+            <button id="updBtn" onclick="updBtn(${student.id}, '${student.name}', '${student.classId}')">Sửa</button> <br />
             <button id="deletBtn" onclick="deletBtn(${student.id})">Xoá</button>
           </td>
         </tr>
@@ -35,7 +35,6 @@ function renderStudent(students, class_list) {
   });
   list_student.innerHTML = html.join("");
 }
-
 addBtn.onclick = async (e) => {
   data = {
     name: addName.value,
@@ -63,6 +62,7 @@ async function deletBtn(id) {
     return respone.json();
   });
 }
+
 async function updBtn(id, name, class_) {
   addName.value = name;
   addClass.value = class_;
