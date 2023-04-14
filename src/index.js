@@ -4,7 +4,7 @@ const list_student = document.querySelector("#list_student");
 const addName = document.querySelector("#name");
 const addClass = document.querySelector("#class");
 const addBtn = document.querySelector("#AddBtn");
-
+// axios
 async function getstudent() {
   let student = await fetch(api_students).then((respone) => {
     return respone.json();
